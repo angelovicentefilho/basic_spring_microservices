@@ -1,10 +1,11 @@
 package br.com.avf.microservices.worker;
 
-import br.com.avf.microservices.worker.entities.Worker;
+import br.com.avf.microservices.commons.entity.Worker;
 import br.com.avf.microservices.worker.repositories.WorkerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
+@EntityScan("br.com.avf.microservices.commons")
 @RequiredArgsConstructor
 public class StartWorkerService {
 

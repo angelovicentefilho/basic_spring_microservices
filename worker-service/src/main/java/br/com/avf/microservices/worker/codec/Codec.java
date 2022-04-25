@@ -1,11 +1,10 @@
 package br.com.avf.microservices.worker.codec;
 
-import br.com.avf.microservices.worker.entities.Worker;
+import br.com.avf.microservices.commons.entity.Worker;
 import br.com.avf.microservices.worker.protocols.WorkerResponse;
 import lombok.experimental.UtilityClass;
 import org.springframework.beans.BeanUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

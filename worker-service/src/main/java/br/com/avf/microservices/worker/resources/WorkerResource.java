@@ -27,14 +27,14 @@ public class WorkerResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<WorkerResponse> findById(@PathVariable Long id) {
-        log.info(">>> Port:......'{}'", this.environment.getProperty("local.server.port"));;
+        log.info(">>> Port:......'{}'", this.environment.getProperty("local.server.port"));
         var response = Codec.toResponse(this.service.findById(id));
         return ResponseEntity.ok(response);
     }
 
     @GetMapping
     public ResponseEntity<WorkerResponse> findAll() {
-        log.info(">>> Port:......'{}'", this.environment.getProperty("local.server.port"));;
+        log.info(">>> Port:......'{}'", this.environment.getProperty("local.server.port"));
         var response = Codec.toResponse(this.service.findAll());
         return ResponseEntity.ok(response);
     }

@@ -1,6 +1,6 @@
 package br.com.avf.microservices.payroll.services;
 
-import br.com.avf.microservices.payroll.domains.Payment;
+import br.com.avf.microservices.commons.domain.Payment;
 
 /**
  * @author angelo.vicente - angelovicentefilho@gmail.com

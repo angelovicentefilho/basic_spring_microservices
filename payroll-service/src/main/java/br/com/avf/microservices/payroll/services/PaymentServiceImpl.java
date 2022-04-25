@@ -1,7 +1,9 @@
 package br.com.avf.microservices.payroll.services;
 
-import br.com.avf.microservices.payroll.domains.Payment;
+import br.com.avf.microservices.commons.domain.Payment;
 import br.com.avf.microservices.payroll.feign.WorkerFeignWebClient;
+import br.com.avf.microservices.payroll.kafka.consumer.PayrollConsumer;
+import br.com.avf.microservices.payroll.kafka.producer.WorkerProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +15,15 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
 
-    private final WorkerFeignWebClient webClient;
+    private final WorkerProducer producer;
+    private final PaymentHandler handler;
 
 
     @Override
     public Payment payment(Long workerId, int days) {
-        var worker = webClient.findById(workerId).getBody();
-        return new Payment(worker.getName(), worker.getDailyIncome(), days);
+        producer.sendMessage(workerId);
+        handler.setDays(days);
+        return handler.getPayment();
     }
 
 }

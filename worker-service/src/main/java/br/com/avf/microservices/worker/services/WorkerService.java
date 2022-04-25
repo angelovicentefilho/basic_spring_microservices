@@ -1,6 +1,6 @@
 package br.com.avf.microservices.worker.services;
 
-import br.com.avf.microservices.worker.entities.Worker;
+import br.com.avf.microservices.commons.entity.Worker;
 
 import java.util.List;
 

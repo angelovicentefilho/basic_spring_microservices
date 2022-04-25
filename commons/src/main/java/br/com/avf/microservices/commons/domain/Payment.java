@@ -1,4 +1,4 @@
-package br.com.avf.microservices.payroll.domains;
+package br.com.avf.microservices.commons.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package br.com.avf.microservices.worker.repositories;
 
-import br.com.avf.microservices.worker.entities.Worker;
+import br.com.avf.microservices.commons.entity.Worker;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
